@@ -14,7 +14,7 @@ echo $worker->GetName();
 
 echo "<br/>";
 
-$shift = new Shift('9','16');
+$shift = new Shift();
 
 $shift->add_shift();
 echo "<br/>";
