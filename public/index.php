@@ -11,3 +11,11 @@ require '../includes/init.php';
 $worker = new Users();
 
 echo $worker->GetName();
+
+echo "<br/>";
+
+$shift = new Shift('9','16');
+
+$shift->add_shift();
+echo "<br/>";
+echo $shift->get_shift_time();

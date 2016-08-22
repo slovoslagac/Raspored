@@ -17,6 +17,7 @@ defined('LIB_PATH') ? null : define('LIB_PATH',SITE_ROOT.DS.'includes');
 require LIB_PATH.DS.'config.php';
 require LIB_PATH.DS.'db.php';
 require LIB_PATH.DS.'Users.php';
+require LIB_PATH.DS.'Shifts.php';
 
 /*echo SITE_ROOT;
 echo "<br/>";
