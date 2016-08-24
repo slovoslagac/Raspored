@@ -8,9 +8,9 @@
 require '../includes/init.php';
 
 
-$worker = new Users();
-
-echo $worker->GetName();
+//$worker = new Users();
+//
+//echo $worker->GetName();
 
 echo "<br/>";
 

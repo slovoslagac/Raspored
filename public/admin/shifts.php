@@ -36,7 +36,6 @@ if (isset($_POST["save"])) {
     } else {
         echo "Kraj smene mora da bude posle pocetka smene";
     }
-
 }
 
 if (isset($_POST["brisanje"])) {
