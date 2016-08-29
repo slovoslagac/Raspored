@@ -29,5 +29,6 @@ require LIB_PATH . DS . 'Users.php';
 require LIB_PATH . DS . 'Shifts.php';
 require LIB_PATH . DS . 'Pause.php';
 require LIB_PATH . DS . 'Role.php';
+require LIB_PATH . DS . 'functions.php';
 
 
