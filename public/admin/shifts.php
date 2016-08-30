@@ -68,6 +68,7 @@ if (isset($_POST["brisanje"])) {
 ?>
 <html>
 <head>
+    <meta charset="UTF-8">
     <style>
         table {
             text-align: center;

@@ -10,9 +10,9 @@
 //win DS = "\", Mac/Linux DS = "/"
 defined('DS') ? null :define('DS', DIRECTORY_SEPARATOR);
 
-defined('SITE_ROOT') ? null : define('SITE_ROOT','C:'.DS.'AppServ'.DS.'www'.DS.'Raspored');
+//defined('SITE_ROOT') ? null : define('SITE_ROOT','C:'.DS.'AppServ'.DS.'www'.DS.'Raspored');
 //defined('SITE_ROOT') ? null : define('SITE_ROOT','C:'.DS.'www'.DS.'Raspored');
-//defined('SITE_ROOT') ? null : define('SITE_ROOT','C:'.DS.'XAMPP'.DS.'htdocs'.DS.'Raspored');
+defined('SITE_ROOT') ? null : define('SITE_ROOT','C:'.DS.'XAMPP'.DS.'htdocs'.DS.'Raspored');
 defined('LIB_PATH') ? null : define('LIB_PATH',SITE_ROOT.DS.'includes');
 
 

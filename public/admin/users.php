@@ -48,6 +48,7 @@ if (isset($_POST["delete"])) {
 
 <html>
 <head>
+    <meta charset="UTF-8">
 
 </head>
 <body>
