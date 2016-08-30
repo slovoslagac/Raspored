@@ -10,11 +10,28 @@ require '../../includes/init.php';
 $starting_day = calendar_day();
 $shift = new Shift();
 $all_shifts = $shift->get_all_shifts_with_pause();
+$worker = new Users();
+$all_workers = $worker->get_all_users();
+
+
+if(isset($_POST["save"])){
+    $tmp_array = $_POST["selected_shift"];
+    /*foreach ($tmp_array as $tmp) {
+        if ($tmp > 0 ) {
+            echo "$tmp <br/>";
+        }
+    }*/
+    $curr_user = get_object_by_id(11,$all_workers);
+    echo $curr_user->firstname;
+}
+
+
 ?>
 <head>
     <style>
-        table,td, tr {
+        table,td, tr,select, option {
             border: solid 1px black;
+            text-align: center;
         }
 
     </style>
@@ -42,8 +59,9 @@ $all_shifts = $shift->get_all_shifts_with_pause();
         ?>
     </tr>
     </thead>
+    <form action="<?php echo $_SERVER["PHP_SELF"] ?>" method="post">
     <tbody>
-    <?php $worker = new Users(); $all_workers = $worker->get_all_users(); foreach( $all_workers as $aw) {?>
+    <?php foreach( $all_workers as $aw) {?>
     <tr>
         <td name="<?php echo $aw->id?>"> <?php echo $aw->firstname.' '.$aw->lastname?></td>
         <?php
@@ -53,10 +71,11 @@ $all_shifts = $shift->get_all_shifts_with_pause();
             $curr_day->add(new DateInterval($add_day));
             $curr_day_formated = $curr_day->format('d.m.Y'); ?>
             <td value="<?php echo $curr_day_formated ?>">
-                <select>
-                    <?php foreach ($all_shifts as $as) {$pause = $as->pst; echo $pause_formated = $pause->format('hh') ;?>
+                <select name="selected_shift[]">
+                    <option value="0">/</option>
+                    <?php foreach ($all_shifts as $as) { ;?>
 
-                        <option value="<?php echo "$as->id"?>"><?php echo "$as->sst - $as->sset ($pause_formated)" ?></option>
+                        <option value="<?php echo $aw->id.'__'.$as->id.'__'.$curr_day_formated ;?>"><?php echo "$as->name ($as->pst)" ?></option>
 
                     <?php } ?>
                 </select>
@@ -68,8 +87,14 @@ $all_shifts = $shift->get_all_shifts_with_pause();
         ?>
     </tr>
     <?php } ?>
+
     </tbody>
+
 </table>
 
+<br>
+<input type="submit" name="save" value="Sacuvaj">
+
+</form>
 </body>
 </html>

@@ -23,7 +23,7 @@ if (isset($_POST["save"])) {
     $ln = $_POST["lname"];
     $ri = $_POST["role"];
     $em = $_POST["email"];
-    $pw = $_POST["pwd"];
+    $pw = crypt($_POST["pwd"]);
     $mc = $_POST["code"];
 
     $new_user = new Users($un, $fn, $ln, $ri, $em, $pw, $mc);

@@ -17,11 +17,23 @@ function calendar_day()
         $start_date = new DateTime('now');
         $start_date->sub(new DateInterval('P' . $date . 'D'));
         return $start_date;
-    } elseif ($date == 0 ) {
+    } elseif ($date == 0) {
         $start_date = new DateTime('now');
         $start_date->sub(new DateInterval('P6D'));
         return $start_date;
     }
+
+}
+
+function get_object_by_id($id, $array)
+{
+    foreach ($array as $el) {
+        if ($el->id == $id) {
+            return $el;
+        }
+
+    }
+
 
 }
 
