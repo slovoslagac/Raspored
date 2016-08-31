@@ -16,6 +16,7 @@ $all_workers = $worker->get_all_users();
 
 if(isset($_POST["save"])){
     $tmp_array = $_POST["selected_shift"];
+    $tmp_object = array();
     /*foreach ($tmp_array as $tmp) {
         if ($tmp > 0 ) {
             echo "$tmp <br/>";
@@ -70,7 +71,7 @@ if(isset($_POST["save"])){
                     $curr_day = clone $starting_day;
                     $add_day = 'P' . $i . 'D';
                     $curr_day->add(new DateInterval($add_day));
-                    $curr_day_formated = $curr_day->format('d.m.Y'); ?>
+                    $curr_day_formated = $curr_day->format('Y-m-d'); ?>
                     <td value="<?php echo $curr_day_formated ?>">
                         <select name="selected_shift[]">
                             <option value="0">/</option>
